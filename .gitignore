@@ -61,7 +61,10 @@ typings/
 # dotenv environment variables file
 .env
 
-# folder projects
+# files project
+package-lock.json
+
+# folder project
 temp
 www
 
