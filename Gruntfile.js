@@ -44,8 +44,7 @@ module.exports = function(grunt) {
             },
             'css-dependencies': {
                 src: [
-                    'node_modules/bootstrap/dist/css/bootstrap.min.css',
-                    'node_modules/font-awesome/css/font-awesome.min.css'
+                    'node_modules/bootstrap/dist/css/bootstrap.min.css'
                 ],
                 dest: 'temp/css/app-dependencies.css'
             },
