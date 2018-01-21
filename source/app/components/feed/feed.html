@@ -1,22 +1,27 @@
-<div class="card border-0 bg-light">
+<div class="c-feed card bg-light mb-3" ng-repeat="post in $ctrl.posts track by $index">
 
 	<div class="card-header d-flex align-items-center p-2">
-		<img class="c-feed-img-profile card-img rounded-circle mr-3" src="https://avatars0.githubusercontent.com/u/2951464?s=460&v=4">
-		Felipe Mengatto
+		<img class="c-feed-img-profile card-img rounded-circle mr-3" ng-src="{{post.user_image}}">
+		{{post.user_name}}
 	</div> <!--  .card-header -->
 	
-	<img class="card-img rounded-0" src="https://i.pinimg.com/originals/6a/d3/66/6ad3665eab60510a866c318dd63a873b.jpg" alt="Card image cap">
+	<img class="card-img rounded-0" ng-src="{{post.image}}">
 	
 	<div class="card-body p-2">
-		<p class="card-text m-0">Mamilos São Molengas</p>
+		<p class="card-text c-feed-img-text m-0" ng-bind="post.description"></p>
 	</div> <!-- .card-body -->
 
 	<div class="card-footer d-flex justify-content-between">
+
 		<div class="card-buttons">
 			<i class="fa fa-heart-o mr-2" aria-hidden="true"></i>
-			100
-		</div> <!--  .card-button -->
-		<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
+			{{post.likes}}
+		</div> <!-- .card-button -->
+
+		<p class="card-text">
+			<small class="text-muted" ng-bind="post.created_at"></small>
+		</p> <!-- .card-text -->
+
 	</div> <!--  .card-footer -->
 
 </div> <!-- .card -->

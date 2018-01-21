@@ -1,0 +1,14 @@
+.c-menu {
+	width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+}
+
+@media (min-width: 768px) {
+
+    .c-menu {
+        position: initial;
+    }
+
+}

@@ -1,0 +1,22 @@
+.c-slidebar {
+	width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+}
+
+@media (min-width: 768px) {
+
+    .c-sidebar {
+    	width: 215px;
+    	bottom: initial;
+    	left: initial;
+    	position: relative;
+    }
+
+    .c-sidebar-fixed {
+    	width: 215px;
+    	position: fixed;
+    }
+
+}

@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                 {
                     expand: true, //habilita o cwd
                     cwd: './source/',
-                    src: ['**/**/*.html'],
+                    src: ['**/**/*.html', '**/**/*.json', '**/**/*.jpg', '**/**/*.png'],
                     dest: 'www/'
                 }
             ]
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         //concatena arquivos
         concat: {
             'css': {
-                src: ['source/app/**/*.css'],
+                src: ['source/app-global-style.css', 'source/app/**/*.css'],
                 dest: 'temp/css/concat.css'
             },
             'css-dependencies': {

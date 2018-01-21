@@ -2,18 +2,19 @@
     'use strict';
 
     angular
-        .module('InstaPhoto')
+        .module('DuckgramApp')
             .component('feedComponent', {
-                    templateUrl : 'app/components/feed/feed.html',
-                    controller  : FeedController
+                    controller  : FeedController,
+                    templateUrl : 'app/components/feed/feed.html'
                 });
 
-    FeedController.$inject = [];
+    FeedController.$inject = ['FeedService', 'UserLoggedService'];
 
-    function FeedController() {
+    function FeedController(FeedService, UserLoggedService) {
 
         // vars
         const self = this;
+        self.posts = [];
 
         // functions
         self.$onInit = onInit;
@@ -21,6 +22,14 @@
         /////////////////////////////////
 
         function onInit() {
+
+            const userId = UserLoggedService.getId();
+            
+            FeedService.getFeedByUserId(userId).then(
+                function(response) {
+                    self.posts = response.data.feed;
+                }
+            );
             
         }
 

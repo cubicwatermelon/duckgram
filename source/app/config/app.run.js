@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('InstaPhoto')
+		.module('DuckgramApp')
 		.run(initApp);
 
 	initApp.$inject = [];

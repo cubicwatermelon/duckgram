@@ -2,6 +2,6 @@
     'use strict';
 
 	angular
-		.module('InstaPhoto', ['ui.router', 'ngSanitize']);
+		.module('DuckgramApp', ['ui.router', 'ngSanitize']);
 
 })();

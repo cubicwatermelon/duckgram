@@ -1,0 +1,48 @@
+<div class="c-login d-flex justify-content-center align-items-center">
+	
+	<div class="card">
+
+		<div class="card-header">
+			Duckgram
+		</div> <!--  .card-header -->
+		
+		<div class="card-body">
+			<form name="login" ng-submit="$ctrl.login();" novalidate>
+
+			    <input-text 
+			    	label="Usuário" 
+			    	required-warning="Digite seu username" 
+			    	ng-model="$ctrl.user.name"
+			    	>
+			    </input-text>
+
+			    <input-password 
+			    	label="Sua Senha" 
+			    	required-warning="Ops, cadê sua senha!?" 
+			    	ng-model="$ctrl.user.password"
+			    	is-required="true">
+			    </input-password>
+
+			    <button type="submit" class="btn btn-block btn-primary" 
+			    	ng-disabled="login.$invalid">
+			    	Entrar
+			    </button>
+
+			</form>
+		</div> <!-- .card-body -->
+
+		<div class="card-footer">
+
+			<p class="card-text">
+				<small class="text-muted">
+					<a ui-sref="join">
+						Cria sua conta agora :)
+					</a>
+				</small>
+			</p> <!-- .card-text -->
+
+		</div> <!--  .card-footer -->
+
+	</div> <!-- .c-login-box -->
+
+</div> <!-- .c-login -->

@@ -1,4 +1,13 @@
+.c-feed {
+	border-color: #CCC;
+	border-bottom-width: 3px;
+}
+
 .c-feed-img-profile {
 	width: 30px;
 	height: 30px;
+}
+
+.c-feed-img-text {
+	font-size: 0.8215rem;
 }

@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('InstaPhoto')
+		.module('DuckgramApp')
 		.config(config);
 
 	config.$inject = ['$httpProvider'];

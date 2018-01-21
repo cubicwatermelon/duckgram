@@ -12,14 +12,17 @@
 		<link type="text/css" rel="stylesheet" href="web-files/css/app.min.css">
 	</head>
 	
-	<body>
+	<body ng-app="DuckgramApp">
 
-		<nav class="navbar navbar-light bg-light">
+		<nav class="navbar fixed-top navbar-light bg-white border-bottom">
+
+			<a class="navbar-brand" href="#">
+				<i class="fa fa-lg fa-picture-o" aria-hidden="true"></i>
+			</a> <!-- .navbar-brand -->
+
 		</nav> <!-- navbar navbar-light bg-light -->
 
-		<div class="container" ng-app="InstaPhoto">
-			<ui-view></ui-view>
-		</div> <!--  .container -->
+		<ui-view></ui-view><!--  ui-view -->
 
 		<!-- js app-dep -->
 		<script src="web-files/js/app-dependencies.min.js"></script>
