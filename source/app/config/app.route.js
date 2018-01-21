@@ -26,15 +26,7 @@
 			        	component: 'feedComponent'
 		            }
 		        }
-	        });
-
-	    $stateProvider
-	        .state('login', {
-	            url: '/login',
-	        	component: 'loginComponent'
-	        });
-
-	    $stateProvider
+	        })
 	        .state('home.profile', {
 	            url: '/profile',
 		        views: {
@@ -43,6 +35,21 @@
 			        	component: 'profileComponent'
 		            }
 		        }
+	        })
+	        .state('home.config', {
+	            url: '/config',
+		        views: {
+		            'homeView': { 
+			            url: '/',
+			        	component: 'userPersonalDataComponent'
+		            }
+		        }
+	        });
+
+	    $stateProvider
+	        .state('login', {
+	            url: '/login',
+	        	component: 'loginComponent'
 	        });
     }
 

@@ -1,0 +1,43 @@
+<div class="c-user-form d-flex justify-content-center align-items-center">
+	
+	<div class="card">
+
+		<div class="card-header">
+			{{$ctrl.title}}
+		</div> <!-- .card-header -->
+		
+		<div class="card-body">
+			<form name="userForm" ng-submit="$ctrl.submitFunction();" novalidate>
+
+			    <input-text 
+			    	label="Seu Nome Completo" 
+			    	required-warning="Digite seu Nome Completo!" 
+			    	ng-model="$ctrl.user.name"
+			    	>
+			    </input-text>
+
+			    <input-text 
+			    	label="Seu Usuário" 
+			    	required-warning="Digite seu usuário!" 
+			    	ng-model="$ctrl.user.username"
+			    	>
+			    </input-text>
+
+			    <input-password 
+			    	label="Digite Sua Senha" 
+			    	required-warning="Ops, cadê sua senha!?" 
+			    	ng-model="$ctrl.user.password"
+			    	is-required="true">
+			    </input-password>
+
+			    <button type="submit" class="btn btn-block btn-primary" 
+			    	ng-disabled="userForm.$invalid">
+			    	Entrar
+			    </button>
+
+			</form>
+		</div> <!-- .card-body -->
+
+	</div> <!-- .c-user-form-box -->
+
+</div> <!-- .c-user-form -->
