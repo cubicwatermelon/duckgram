@@ -9,7 +9,6 @@
 
     function RouterApp($stateProvider, $urlRouterProvider) {
 
-	    $urlRouterProvider.otherwise('/login');
 	    $urlRouterProvider.when('/home', '/home/feed');
 
 	    $stateProvider
@@ -45,12 +44,7 @@
 		            }
 		        }
 	        });
-
-	    $stateProvider
-	        .state('login', {
-	            url: '/login',
-	        	component: 'loginComponent'
-	        });
+	        
     }
 
 })();

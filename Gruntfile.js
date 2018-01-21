@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                 src: [
                     'source/app/config/app.module.js',
                     'source/app/config/app.config.js',
-                    'source/app/config/app.route.js',
+                    'source/app/config/routes/**/*.js',
                     'source/app/shared/**/*.js',
                     'source/app/**/*.js',
                 ],
@@ -62,6 +62,7 @@ module.exports = function(grunt) {
                 src: [
                     'node_modules/angular/angular.min.js',
                     'node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
+                    'node_modules/ng-file-upload/dist/ng-file-upload.min.js',
                     'node_modules/angular-sanitize/angular-sanitize.min.js'
                 ],
                 dest: 'temp/js/app-dependencies.js'

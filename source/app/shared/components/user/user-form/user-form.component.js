@@ -6,6 +6,7 @@
             .component('userFormComponent', {
                     bindings: {
                         title: '@',
+                        buttonValue: '@',
                         submitFunction: '&'
                     },
                     controller  : userFormController,

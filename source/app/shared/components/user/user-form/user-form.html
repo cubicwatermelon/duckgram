@@ -1,6 +1,6 @@
 <div class="c-user-form d-flex justify-content-center align-items-center">
 	
-	<div class="card">
+	<div class="card  w-100">
 
 		<div class="card-header">
 			{{$ctrl.title}}
@@ -12,15 +12,13 @@
 			    <input-text 
 			    	label="Seu Nome Completo" 
 			    	required-warning="Digite seu Nome Completo!" 
-			    	ng-model="$ctrl.user.name"
-			    	>
+			    	ng-model="$ctrl.user.name">
 			    </input-text>
 
 			    <input-text 
 			    	label="Seu Usuário" 
 			    	required-warning="Digite seu usuário!" 
-			    	ng-model="$ctrl.user.username"
-			    	>
+			    	ng-model="$ctrl.user.username">
 			    </input-text>
 
 			    <input-password 
@@ -30,9 +28,20 @@
 			    	is-required="true">
 			    </input-password>
 
-			    <button type="submit" class="btn btn-block btn-primary" 
+			    <input-upload 
+			    	label="Envie sua Foto"
+			    	input-text="Clique"
+			    	is-drop-active="true"
+			    	required-warning="Você precisa de uma Imagem :)" 
+			    	ng-model="$ctrl.user.imagem"
+			    	is-required="true">
+			    </input-upload>
+
+			    <button 
+			    	type="submit" 
+			    	class="btn btn-block btn-primary" 
 			    	ng-disabled="userForm.$invalid">
-			    	Entrar
+			    	{{$ctrl.buttonValue}}
 			    </button>
 
 			</form>

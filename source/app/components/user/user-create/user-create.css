@@ -1,0 +1,10 @@
+.c-user-create {
+	width: 100vw;
+	height: 100vh;
+	background: url(/app/assets/images/57c533c850025e10be0c68.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.c-user-create-box {
+	width: 350px;
+}
