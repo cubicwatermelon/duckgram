@@ -3,25 +3,28 @@
 
     angular
         .module('DuckgramApp')
-        .component('inputText', {
+        .component('inputUpload', {
 			bindings: {
-				label: '@',
+                label: '@',
+				inputText: '@',
                 isRequired: '@',
-				requiredWarning: '@'
+				requiredWarning: '@',
+                isDropActive: '@'
 			},
 			require: {
 				model: 'ngModel'
 			},
-			controller: InputTextController,
-            templateUrl: 'app/shared/components/fields/input-text/input-text.html'
+			controller: InputUploadController,
+            templateUrl: 'app/shared/modules/fields/input-upload/input-upload.html'
         });
 
-    InputTextController.$inject = [];
+    InputUploadController.$inject = ['Upload'];
 
-    function InputTextController() {
+    function InputUploadController(Upload) {
 
         // vars
         const self = this;
+        self.isDropActive = true;
         self.label = '';
         self.requiredWarning = '';
         self.hasError = false;

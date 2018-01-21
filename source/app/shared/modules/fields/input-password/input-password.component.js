@@ -3,28 +3,25 @@
 
     angular
         .module('DuckgramApp')
-        .component('inputUpload', {
+        .component('inputPassword', {
 			bindings: {
-                label: '@',
-				inputText: '@',
+				label: '@',
                 isRequired: '@',
-				requiredWarning: '@',
-                isDropActive: '@'
+				requiredWarning: '@'
 			},
 			require: {
 				model: 'ngModel'
 			},
-			controller: InputUploadController,
-            templateUrl: 'app/shared/components/fields/input-upload/input-upload.html'
+			controller: InputPasswordController,
+            templateUrl: 'app/shared/modules/fields/input-password/input-password.html'
         });
 
-    InputUploadController.$inject = ['Upload'];
+    InputPasswordController.$inject = [];
 
-    function InputUploadController(Upload) {
+    function InputPasswordController() {
 
         // vars
         const self = this;
-        self.isDropActive = true;
         self.label = '';
         self.requiredWarning = '';
         self.hasError = false;
@@ -47,10 +44,10 @@
 
             if (self.value == '') {
                 self.hasError = true;
-                self.model.$setValidity('required', false);
+                self.model.$setValidity('required',false);
             } else {
                 self.hasError = false;
-                self.model.$setValidity('required', true);
+                self.model.$setValidity('required',true);
             }
 
             self.model.$setViewValue(self.value);

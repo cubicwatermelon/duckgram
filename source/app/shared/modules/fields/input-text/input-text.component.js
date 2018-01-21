@@ -3,7 +3,7 @@
 
     angular
         .module('DuckgramApp')
-        .component('inputPassword', {
+        .component('inputText', {
 			bindings: {
 				label: '@',
                 isRequired: '@',
@@ -12,13 +12,13 @@
 			require: {
 				model: 'ngModel'
 			},
-			controller: InputPasswordController,
-            templateUrl: 'app/shared/components/fields/input-password/input-password.html'
+			controller: InputTextController,
+            templateUrl: 'app/shared/modules/fields/input-text/input-text.html'
         });
 
-    InputPasswordController.$inject = [];
+    InputTextController.$inject = [];
 
-    function InputPasswordController() {
+    function InputTextController() {
 
         // vars
         const self = this;
@@ -44,10 +44,10 @@
 
             if (self.value == '') {
                 self.hasError = true;
-                self.model.$setValidity('required',false);
+                self.model.$setValidity('required', false);
             } else {
                 self.hasError = false;
-                self.model.$setValidity('required',true);
+                self.model.$setValidity('required', true);
             }
 
             self.model.$setViewValue(self.value);

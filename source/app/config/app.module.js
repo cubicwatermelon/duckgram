@@ -2,6 +2,12 @@
     'use strict';
 
 	angular
-		.module('DuckgramApp', ['ui.router', 'ngSanitize', 'ngFileUpload']);
+		.module('DuckgramApp', 
+			[
+				'ui.router', 
+				'ngSanitize', 
+				'DuckgramApp.fields'
+			]
+		);
 
 })();
