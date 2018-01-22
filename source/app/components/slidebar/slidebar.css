@@ -6,16 +6,19 @@
 }
 
 @media (min-width: 768px) {
+    
+    .c-sidebar,
+    .c-sidebar-fixed {
+        width: 300px;
+    }
 
     .c-sidebar {
-    	width: 215px;
     	bottom: initial;
     	left: initial;
     	position: relative;
     }
 
     .c-sidebar-fixed {
-    	width: 215px;
     	position: fixed;
     }
 

@@ -52,6 +52,15 @@
 			        	component: 'postComponent'
 		            }
 		        }
+	        })
+	        .state('home.notification', {
+	            url: '/notification',
+		        views: {
+		            'homeView': { 
+			            url: '/',
+			        	component: 'notificationComponent'
+		            }
+		        }
 	        });
 	        
     }

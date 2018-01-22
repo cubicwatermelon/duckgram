@@ -3,14 +3,14 @@
 
     angular
         .module('DuckgramApp')
-            .component('slidebarComponent', {
-                    controller  : slidebarController,
-                    templateUrl : 'app/components/slidebar/slidebar.html'
+            .component('notificationComponent', {
+                    controller  : notificationController,
+                    templateUrl : 'app/components/notification/notification.html'
                 });
 
-    slidebarController.$inject = [];
+    notificationController.$inject = [];
 
-    function slidebarController() {
+    function notificationController() {
 
         // vars
         const self = this;
