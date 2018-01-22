@@ -1,0 +1,16 @@
+<div class="form-group">
+	
+    <label>{{$ctrl.label}}</label>
+
+    <textarea
+    	name="inputcomponent" 
+    	class="form-control" 
+    	ng-model="$ctrl.value" 
+    	ng-change="$ctrl.onChange()">
+    </textarea>
+
+    <div ng-show="$ctrl.hasError" class="alert alert-danger mt-2 p-2" role="alert">
+    	{{$ctrl.requiredWarning}}
+    </div>
+
+</div>

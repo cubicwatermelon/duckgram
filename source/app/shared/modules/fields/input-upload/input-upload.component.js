@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('DuckgramApp')
+        .module('DuckgramApp.fields')
         .component('inputUpload', {
 			bindings: {
                 label: '@',

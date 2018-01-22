@@ -1,0 +1,42 @@
+<div class="card">
+
+	<div class="card-header">
+		<i class="fa fa-camera pr-2" aria-hidden="true"></i>
+		Novo Post
+	</div> <!--  .card-header -->
+	
+	<div class="card-body">
+		<h5 class="card-title">Bora postar algo!?</h5>
+		<h6 class="card-subtitle mb-2 text-muted">
+			Meus instintos postativos dizem que esse vai bombar!
+			<i class="fa fa-heart" aria-hidden="true"></i>
+		</h6>
+		<form name="post" ng-submit="$ctrl.addNewPost();" novalidate>
+
+		    <text-area 
+		    	label="Descrição" 
+		    	required-warning="É obrigado ter uma descrição :)" 
+		    	ng-model="$ctrl.post.description">
+		    </text-area>
+
+		    <input-upload 
+		    	label="Envie sua Foto"
+		    	input-text="Clique"
+		    	is-drop-active="true"
+		    	required-warning="Você precisa de uma Imagem :)" 
+		    	ng-model="$ctrl.user.imagem"
+		    	is-required="true">
+		    </input-upload>
+
+		    <button 
+		    	type="submit" 
+		    	class="btn btn-block btn-primary" 
+		    	ng-disabled="post.$invalid">
+		    	<i class="fa fa-plus-circle pr-1" aria-hidden="true"></i>
+		    	Postar
+		    </button>
+
+		</form>
+	</div> <!-- .card-body -->
+
+</div> <!-- .card -->

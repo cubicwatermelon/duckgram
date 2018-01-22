@@ -43,6 +43,15 @@
 			        	component: 'userPersonalDataComponent'
 		            }
 		        }
+	        })
+	        .state('home.post', {
+	            url: '/post',
+		        views: {
+		            'homeView': { 
+			            url: '/',
+			        	component: 'postComponent'
+		            }
+		        }
 	        });
 	        
     }
