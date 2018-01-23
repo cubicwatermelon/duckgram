@@ -8,24 +8,34 @@
                     templateUrl : 'app/components/user/user-create/user-create.html'
                 });
 
-    userCreateController.$inject = [];
+    userCreateController.$inject = ['UserCreateService'];
 
-    function userCreateController() {
+    function userCreateController(UserCreateService) {
 
         // vars
         const self = this;
 
         // functions
         self.$onInit = onInit;
-        self.addUser = addUser;
+        self.addNewUser = addNewUser;
 
         /////////////////////////////////
 
         function onInit() {
         }
 
-        function addUser() {
-            console.log('update');
+        function addNewUser(event) {
+            const data = event.data;
+
+            UserCreateService.addNewUser(data).then(
+                function(response){
+                    
+                    if (response.data == 200) {
+                        
+                    }
+
+                }
+            );
         }
 
     }

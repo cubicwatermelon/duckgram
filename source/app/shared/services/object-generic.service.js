@@ -3,7 +3,7 @@
 
     angular
         .module('DuckgramApp')
-        .factory('ObjectGenericService', ObjectGenericService)
+        .factory('ObjectGenericService', ObjectGenericService);
 
     ObjectGenericService.$inject = [];
 

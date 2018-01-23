@@ -5,9 +5,9 @@
         .module('DuckgramApp')
         .factory('FeedService', FeedService);
 
-    FeedService.$inject = ['$http'];
+    FeedService.$inject = ['HttpGenericService'];
 
-    function FeedService($http) {
+    function FeedService(HttpGenericService) {
 
         var service = {
             getFeedByUserId: getFeedByUserId
@@ -19,18 +19,8 @@
         function getFeedByUserId(id) {
 
             // `http://localhost:3000/users/${id}/feed`
-            return $http.get('mocks/feed.json')
-                        .then(success)
-                        .catch(error);
-
-                        function success(response) {
-                            return response;
-                        }
-
-                        function error(error) {
-                            console.error('XHR Failed for getFeedByUserId ' + error.data);
-                        }
-
+            return HttpGenericService.get('mocks/feed.json');
+            
         }
 
     }

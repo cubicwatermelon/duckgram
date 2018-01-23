@@ -8,36 +8,42 @@
 		</div> <!-- .card-header -->
 		
 		<div class="card-body">
-			<form name="userForm" ng-submit="$ctrl.submitFunction();" novalidate>
+			<form name="userForm" ng-submit="$ctrl.executeCallback();" novalidate>
 
 			    <input-text 
 			    	label="Seu Nome Completo" 
 			    	required-warning="Digite seu Nome Completo!" 
-			    	ng-model="$ctrl.user.name">
+			    	ng-model="$ctrl.data.name">
 			    </input-text>
 
 			    <input-text 
 			    	label="Seu Usuário" 
 			    	required-warning="Digite seu usuário!" 
-			    	ng-model="$ctrl.user.username">
+			    	ng-model="$ctrl.data.username">
+			    </input-text>
+
+			    <input-text 
+			    	label="Seu Email" 
+			    	required-warning="Digite seu email!" 
+			    	ng-model="$ctrl.data.email">
 			    </input-text>
 
 			    <input-password 
 			    	label="Digite Sua Senha" 
 			    	required-warning="Ops, cadê sua senha!?" 
-			    	ng-model="$ctrl.user.password"
+			    	ng-model="$ctrl.data.password"
 			    	is-required="true">
 			    </input-password>
 
-			    <input-upload 
+<!-- 			    <input-upload 
 			    	label="Envie sua Foto"
 			    	input-text="Clique"
 			    	is-drop-active="true"
 			    	required-warning="Você precisa de uma Imagem :)" 
-			    	ng-model="$ctrl.user.imagem"
+			    	ng-model="$ctrl.data.imagem"
 			    	is-required="true">
 			    </input-upload>
-
+ -->
 			    <button 
 			    	type="submit" 
 			    	class="btn btn-block btn-primary" 

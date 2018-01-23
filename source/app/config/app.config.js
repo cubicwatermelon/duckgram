@@ -9,7 +9,7 @@
 
 	function config($httpProvider) {
 
-		// Config headers ( CORS )
+		//config headers ( CORS )
 		$httpProvider.defaults.useXDomain = true;
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 

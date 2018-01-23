@@ -5,6 +5,10 @@
     position: fixed;
 }
 
+.c-slidebar-notification {
+    display: none;
+}
+
 @media (min-width: 768px) {
     
     .c-sidebar,
@@ -20,6 +24,10 @@
 
     .c-sidebar-fixed {
     	position: fixed;
+    }
+
+    .c-slidebar-notification {
+        display: block;
     }
 
 }

@@ -3,7 +3,7 @@
 
     angular
         .module('DuckgramApp')
-        .factory('LocalStorageGenericService', LocalStorageGenericService)
+        .factory('LocalStorageGenericService', LocalStorageGenericService);
 
     LocalStorageGenericService.$inject = [];
 

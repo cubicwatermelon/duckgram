@@ -11,4 +11,8 @@
         position: initial;
     }
 
+    .c-menu-notification {
+    	display: none;
+    }
+
 }

@@ -19,13 +19,25 @@
 
         // vars
         const self = this;
+        self.data = {};
 
         // functions
         self.$onInit = onInit;
+        self.executeCallback = executeCallback;
 
         /////////////////////////////////
 
         function onInit() {
+        }
+
+        function executeCallback() {
+
+            self.submitFunction({
+                    $event: {
+                        data: self.data
+                    }
+                });
+
         }
 
     }
