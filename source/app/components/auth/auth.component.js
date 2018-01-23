@@ -3,14 +3,14 @@
 
     angular
         .module('DuckgramApp')
-        .component('loginComponent', {
-            controller: LoginController,
-            templateUrl : 'app/components/login/login.html'
+        .component('authComponent', {
+            controller: AuthController,
+            templateUrl : 'app/components/auth/auth.html'
         });
 
-    LoginController.$inject = [];
+    AuthController.$inject = [];
 
-    function LoginController() {
+    function AuthController() {
 
         // vars
         const self = this;

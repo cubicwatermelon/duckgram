@@ -15,7 +15,10 @@
 	        .state('home', {
 	            url: '/home',
 	        	component: 'homeComponent',
-		        abstract: true
+		        abstract: true,
+			    data: {
+			        authorize: true
+			    },
 	        })
 	        .state('home.feed', {
 	        	url: '/feed',
@@ -24,7 +27,7 @@
 			            url: '/',
 			        	component: 'feedComponent'
 		            }
-		        }
+		        },
 	        })
 	        .state('home.profile', {
 	            url: '/profile',

@@ -14,7 +14,7 @@
 	    $stateProvider
 	        .state('login', {
 	            url: '/login',
-	        	component: 'loginComponent'
+	        	component: 'authComponent'
 	        });
 
 	    $stateProvider
