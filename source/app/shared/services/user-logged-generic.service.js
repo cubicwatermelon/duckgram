@@ -3,11 +3,11 @@
 
     angular
         .module('DuckgramApp')
-        .factory('UserLoggedService', UserLoggedService);
+        .factory('UserLoggedServiceGeneric', UserLoggedServiceGeneric);
 
-    UserLoggedService.$inject = ['LocalStorageGenericService'];
+    UserLoggedServiceGeneric.$inject = ['LocalStorageGenericService'];
 
-    function UserLoggedService(LocalStorageGenericService) {
+    function UserLoggedServiceGeneric(LocalStorageGenericService) {
 
         var service = {
             getId: getId,

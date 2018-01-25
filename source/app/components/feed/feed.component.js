@@ -4,13 +4,16 @@
     angular
         .module('DuckgramApp')
             .component('feedComponent', {
+                    bindings: {
+                        externalPosts: '<'
+                    },
                     controller  : FeedController,
                     templateUrl : 'app/components/feed/feed.html'
                 });
 
-    FeedController.$inject = ['FeedService', 'UserLoggedService'];
+    FeedController.$inject = ['$scope','FeedService', 'UserLoggedServiceGeneric'];
 
-    function FeedController(FeedService, UserLoggedService) {
+    function FeedController($scope, FeedService, UserLoggedServiceGeneric) {
 
         // vars
         const self = this;
@@ -23,14 +26,28 @@
 
         function onInit() {
 
-            const userId = UserLoggedService.getId();
+            if (hasExternalPosts()) {
+                self.posts = self.externalPosts;
+            } else {
+                findFeedByUserId();
+            }
+
+        }
+
+        function findFeedByUserId() {
+
+            const userId = UserLoggedServiceGeneric.getId();
             
-            FeedService.getFeedByUserId(userId).then(
+            FeedService.findFeedByUserId().then(
                 function(response) {
-                    self.posts = response.data.feed;
+                    self.posts = response.data;
                 }
             );
-            
+
+        }
+
+        function hasExternalPosts() {
+            return self.externalPosts !== undefined;
         }
 
     }

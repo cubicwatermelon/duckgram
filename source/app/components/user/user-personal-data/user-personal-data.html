@@ -1,8 +1,10 @@
 <div class="c-user-personal-data">
 
-	<user-form-component 
+	<user-form-component
+		ng-if="$ctrl.lengthObject($ctrl.user) > 0"
 		title="Atualizar Seus Dados :)"
-		submit-function="$ctrl.updateUserData();"
+		submit-function="$ctrl.updateUserData($event);"
+		form-data="$ctrl.user"
 		button-value="Salvar">
 	</user-form-component>
 

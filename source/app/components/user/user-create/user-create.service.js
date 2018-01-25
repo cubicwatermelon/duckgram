@@ -17,7 +17,7 @@
 
         function addNewUser(data) {
 
-            return HttpGenericService.post('user/insert', data);
+            return HttpGenericService.post('users', data);
 
         }
 

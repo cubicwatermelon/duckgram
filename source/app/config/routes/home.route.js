@@ -30,7 +30,10 @@
 		        },
 	        })
 	        .state('home.profile', {
-	            url: '/profile',
+	            url: '/profile/{id}',
+				params: {
+					id: { value: null }
+				},
 		        views: {
 		            'homeView': { 
 			            url: '/',
@@ -62,6 +65,18 @@
 		            'homeView': { 
 			            url: '/',
 			        	component: 'notificationComponent'
+		            }
+		        }
+	        })
+	        .state('home.users', {
+	            url: '/users/:status/{id}',
+				params: {
+					id: { value: null }
+				},
+		        views: {
+		            'homeView': { 
+			            url: '/',
+			        	component: 'userListComponent'
 		            }
 		        }
 	        });

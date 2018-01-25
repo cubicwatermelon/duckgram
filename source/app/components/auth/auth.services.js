@@ -16,8 +16,8 @@
         var service = {
             getToken: getToken,
             setToken: setToken,
-            signIn  : signIn,
-            logout  : logout
+            login: login,
+            logout: logout
         };
 
         return service;
@@ -41,8 +41,8 @@
             LocalStorageGenericService.insert(localStorageName, token);
         }
 
-        function signIn(data) {
-            return HttpGenericService.post('auth/auth', data);
+        function login(data) {
+            return HttpGenericService.post('authenticate', data);
         }
 
         function logout() {

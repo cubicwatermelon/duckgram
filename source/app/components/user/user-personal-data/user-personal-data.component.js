@@ -8,24 +8,55 @@
                     templateUrl : 'app/components/user/user-personal-data/user-personal-data.html'
                 });
 
-    userPersonalDataController.$inject = [];
+    userPersonalDataController.$inject = ['UserPersonalDataService', 'UserLoggedServiceGeneric', 'ObjectGenericService'];
 
-    function userPersonalDataController() {
+    function userPersonalDataController(UserPersonalDataService, UserLoggedServiceGeneric, ObjectGenericService) {
 
         // vars
         const self = this;
+        self.user = {};
 
         // functions
         self.$onInit = onInit;
+        self.lengthObject = lengthObject;
         self.updateUserData = updateUserData;
 
         /////////////////////////////////
 
         function onInit() {
+            findUserById();
         }
 
-        function updateUserData() {
-            console.log('update');
+        function findUserById() {
+
+            const userId = UserLoggedServiceGeneric.getId();
+            
+            UserPersonalDataService.findUserById(userId).then(
+                function(response) {
+                    self.user = response.data;
+                }
+            );
+
+        }
+
+        function lengthObject(data) {
+            return ObjectGenericService.lengthObject(data);
+        }
+
+        function updateUserData(event) {
+
+            const data = {user: event.data};
+
+            UserPersonalDataService.updateUserData(data).then(
+                function(response){
+                    
+                    if (response.status == 204) {
+                        self.user.password = '';
+                    }
+
+                }
+            );
+
         }
 
     }

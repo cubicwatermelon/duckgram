@@ -14,7 +14,7 @@
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 		// add interceptor in requests
-		$httpProvider.interceptors.push('AuthInterceptor');
+		$httpProvider.interceptors.push('AuthInterceptorGeneric');
 
 	}
 

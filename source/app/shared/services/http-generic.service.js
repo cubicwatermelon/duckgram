@@ -10,7 +10,7 @@
     function HttpGenericService($http) {
 
         // vars local
-        const baseUrl = 'http://duckgram.cubicwatermelon.com/service';
+        const baseUrl = 'https://duckgram-api.herokuapp.com/api/v1';
 
         var service = {
             get: find,

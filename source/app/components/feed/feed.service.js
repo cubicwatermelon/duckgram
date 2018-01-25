@@ -10,16 +10,15 @@
     function FeedService(HttpGenericService) {
 
         var service = {
-            getFeedByUserId: getFeedByUserId
+            findFeedByUserId: findFeedByUserId
         };
         return service;
 
         ////////////////
 
-        function getFeedByUserId(id) {
+        function findFeedByUserId() {
 
-            // `http://localhost:3000/users/${id}/feed`
-            return HttpGenericService.get('mocks/feed.json');
+            return HttpGenericService.get('feed');
             
         }
 

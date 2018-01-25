@@ -5,7 +5,7 @@
 	<div class="c-profile-header-content">
 
 		<div class="c-profile-header-content-item">
-			<h4>felipemengatto</h4>
+			<h4 ng-bind="$ctrl.profile.name"></h4>
 		</div> <!-- .c-profile-header-content-item -->
 
 		<div class="c-profile-header-content-item">
@@ -15,10 +15,14 @@
 					<strong>73</strong> publicações
 				</li>
 				<li class="c-profile-header-content-list-item">
-					<strong>321</strong> seguidores
+					<a ui-sref="home.users({status: 'followers'})">
+						<strong ng-bind="$ctrl.profile.followers"></strong> seguidores
+					</a>
 				</li>
 				<li class="c-profile-header-content-list-item">
-					<strong>283</strong> seguindo
+					<a ui-sref="home.users({status: 'following'})">
+						<strong ng-bind="$ctrl.profile.following"></strong> seguindo
+					</a>
 				</li>
 			</ul><!-- .btn-group -->
 
@@ -28,5 +32,7 @@
 
 </div> <!-- .c-profile-header -->
 
-<feed-component class="c-profile-content">
+<feed-component class="c-profile-content" 
+	ng-if="$ctrl.lengthObject($ctrl.profilePosts) > 0" 
+	external-posts="$ctrl.profilePosts">
 </feed-component><!-- .c-profile-content -->

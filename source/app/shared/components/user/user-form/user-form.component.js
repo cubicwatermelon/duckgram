@@ -5,9 +5,10 @@
         .module('DuckgramApp')
             .component('userFormComponent', {
                     bindings: {
-                        title: '@',
                         buttonValue: '@',
-                        submitFunction: '&'
+                        formData: '<',
+                        submitFunction: '&',
+                        title: '@'
                     },
                     controller  : userFormController,
                     templateUrl : 'app/shared/components/user/user-form/user-form.html'
@@ -28,6 +29,11 @@
         /////////////////////////////////
 
         function onInit() {
+
+            if (hasFormData()) {
+                self.data = self.formData;
+            }
+            
         }
 
         function executeCallback() {
@@ -38,6 +44,10 @@
                     }
                 });
 
+        }
+
+        function hasFormData() {
+            return self.formData !== undefined;
         }
 
     }

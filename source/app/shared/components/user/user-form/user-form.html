@@ -11,25 +11,19 @@
 			<form name="userForm" ng-submit="$ctrl.executeCallback();" novalidate>
 
 			    <input-text 
-			    	label="Seu Nome Completo" 
+			    	label="Nome Completo" 
 			    	required-warning="Digite seu Nome Completo!" 
 			    	ng-model="$ctrl.data.name">
 			    </input-text>
 
 			    <input-text 
-			    	label="Seu Usuário" 
-			    	required-warning="Digite seu usuário!" 
-			    	ng-model="$ctrl.data.username">
-			    </input-text>
-
-			    <input-text 
-			    	label="Seu Email" 
+			    	label="Email" 
 			    	required-warning="Digite seu email!" 
 			    	ng-model="$ctrl.data.email">
 			    </input-text>
 
 			    <input-password 
-			    	label="Digite Sua Senha" 
+			    	label="Sua Senha" 
 			    	required-warning="Ops, cadê sua senha!?" 
 			    	ng-model="$ctrl.data.password"
 			    	is-required="true">

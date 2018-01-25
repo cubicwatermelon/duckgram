@@ -8,24 +8,34 @@
                     templateUrl : 'app/components/post/post.html'
                 });
 
-    postController.$inject = [];
+    postController.$inject = ['PostService'];
 
-    function postController() {
+    function postController(PostService) {
 
         // vars
         const self = this;
+        self.post = {'description': '', 'picture': ''};
 
         // functions
         self.$onInit = onInit;
-        self.addNewPost = addNewPost;
+        self.createNewPost = createNewPost;
 
         /////////////////////////////////
 
         function onInit() {
         }
 
-        function addNewPost() {
-            console.log('new post');
+        function createNewPost(data) {
+
+            PostService.create(data).then(
+                function(response) {
+                    console.log(response);
+                    if (response.status == 201) {
+                        self.post = {};
+                    }
+                }
+            );
+
         }
 
     }

@@ -3,11 +3,11 @@
 
     angular
         .module('DuckgramApp')
-        .factory('AuthInterceptor', AuthInterceptor);
+        .factory('AuthInterceptorGeneric', AuthInterceptorGeneric);
 
-    AuthInterceptor.$inject = ['$location', '$injector', '$q'];
+    AuthInterceptorGeneric.$inject = ['$location', '$injector', '$q'];
 
-    function AuthInterceptor($location, $injector, $q) {
+    function AuthInterceptorGeneric($location, $injector, $q) {
 
         var service = {
             request: request,
@@ -18,8 +18,7 @@
 
         // requests ok
 		function request(config) {
-			console.log('inter');
-
+			
 			// verifica se existe cabecalho
 			config.headers = config.headers || {};
 

@@ -25,13 +25,18 @@
         }
 
         function addNewUser(event) {
-            const data = event.data;
+            
+            const data = {user: event.data};
 
             UserCreateService.addNewUser(data).then(
                 function(response){
                     
                     if (response.data == 200) {
                         
+                    }
+
+                    if (response.data == 500) {
+                        console.log('Usuário ja cadastrado');
                     }
 
                 }

@@ -11,7 +11,7 @@
 			Meus instintos postativos dizem que esse vai bombar!
 			<i class="fa fa-heart" aria-hidden="true"></i>
 		</h6>
-		<form name="post" ng-submit="$ctrl.addNewPost();" novalidate>
+		<form name="post" ng-submit="$ctrl.createNewPost($ctrl.post);" novalidate>
 
 		    <text-area 
 		    	label="Descrição" 
@@ -24,7 +24,7 @@
 		    	input-text="Clique"
 		    	is-drop-active="true"
 		    	required-warning="Você precisa de uma Imagem :)" 
-		    	ng-model="$ctrl.user.imagem"
+		    	ng-model="$ctrl.post.picture"
 		    	is-required="true">
 		    </input-upload>
 

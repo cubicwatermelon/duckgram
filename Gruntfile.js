@@ -61,6 +61,7 @@ module.exports = function(grunt) {
             'js-dependencies': {
                 src: [
                     'node_modules/angular/angular.min.js',
+                    'node_modules/angular-locale-pt-br/angular-locale_pt-br.js',
                     'node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
                     'node_modules/@uirouter/angularjs/release/stateEvents.min.js',
                     'node_modules/ng-file-upload/dist/ng-file-upload.min.js',

@@ -8,13 +8,13 @@
             templateUrl : 'app/components/auth/auth.html'
         });
 
-    AuthController.$inject = [];
+    AuthController.$inject = ['$location', 'AuthService', 'UserLoggedServiceGeneric'];
 
-    function AuthController() {
+    function AuthController($location, AuthService, UserLoggedServiceGeneric) {
 
         // vars
         const self = this;
-        self.user = {'name': '', 'password': ''};
+        self.user = {'email': '', 'password': ''};
 
         // functions
         self.$onInit = onInit;
@@ -23,12 +23,29 @@
         /////////////////////////////////
 
         function onInit() {
+
+            const accessToken = AuthService.getToken();
+            if (accessToken) {
+                $location.path('/home');
+            }
+
         }
 
         function login(data) {
 
-            console.log(data);
+            AuthService.login(data).then(
+                function(response){
+                    
+                    const accessToken = response.data.access_token;
+                    const userId = response.data.id;
+                    if (response.status == 200 && accessToken) {
+                        AuthService.setToken(accessToken);
+                        UserLoggedServiceGeneric.setId(userId);
+                        $location.path('/home');
+                    }
 
+                }
+            );
         }
 
     }
