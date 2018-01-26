@@ -2,8 +2,8 @@
 	
 	<ul class="list-group w-100">
 		<li class="list-group-item" 
-			ng-repeat="user in $ctrl.users"
-			ng-bind="user.name">
+			ng-repeat="user in $ctrl.users | filter: $ctrl.filter">
+			<a ui-sref="home.profile({id: user.id})" ng-bind="user.name"></a>
 		</li>
 	</ul>
 

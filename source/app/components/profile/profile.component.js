@@ -40,7 +40,6 @@
 
         }
 
-
         function findPostsByUserId(id = null) {
 
             const userId = id || UserLoggedServiceGeneric.getId();

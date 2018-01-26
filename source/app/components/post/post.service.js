@@ -10,11 +10,18 @@
     function PostService(HttpGenericService) {
 
         var service = {
-            create: create
+            create: create,
+            findFeedByPostId: findFeedByPostId
         };
         return service;
 
         ////////////////
+
+        function findFeedByPostId(id) {
+
+            return HttpGenericService.get(`posts/${id}`);
+            
+        }
 
         function create(data) {
 

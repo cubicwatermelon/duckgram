@@ -1,0 +1,30 @@
+<div class="c-user-search d-flex flex-column justify-content-center align-items-center">
+
+	<h3 ng-if="!$ctrl.onlySearch"> Buscar Usuários </h3>
+
+	<div class="c-user-search-item">
+		<form name="searchForm" ng-submit="$ctrl.findUserByValue($ctrl.searchInput);">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Buscar Usuário" ng-model="$ctrl.searchInput">
+				<span class="input-group-append" ng-if="$ctrl.onlySearch">
+					<button 
+						class="btn btn-secondary" 
+						ng-disabled="searchForm.$invalid">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</button>
+				</span>
+			</div>
+		</form>
+	</div> <!--  .c-user-search-item -->
+	
+	<div class="c-user-search-item mt-3" ng-if="!$ctrl.onlySearch">
+
+		<user-list-component 
+			ng-if="$ctrl.users.length > 0" 
+			external-data="$ctrl.users" 
+			filter="$ctrl.searchInput">
+		</user-list-component>
+
+	</div> <!--  .c-user-search-item -->
+
+</div> <!-- .c-user-search -->

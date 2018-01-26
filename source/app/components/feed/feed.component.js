@@ -11,9 +11,9 @@
                     templateUrl : 'app/components/feed/feed.html'
                 });
 
-    FeedController.$inject = ['$scope','FeedService', 'UserLoggedServiceGeneric'];
+    FeedController.$inject = ['$stateParams', '$scope','FeedService', 'PostService', 'UserLoggedServiceGeneric'];
 
-    function FeedController($scope, FeedService, UserLoggedServiceGeneric) {
+    function FeedController($stateParams, $scope, FeedService, PostService, UserLoggedServiceGeneric) {
 
         // vars
         const self = this;
@@ -29,9 +29,15 @@
 
             if (hasExternalPosts()) {
                 self.posts = self.externalPosts;
-            } else {
-                findFeedByUserId();
+                return;
             }
+
+            if (hasViewUniquePost()) {
+                findFeedByPostId($stateParams.id);
+                return;
+            }
+            
+            findFeedByUserId();
 
         }
 
@@ -47,8 +53,22 @@
 
         }
 
+        function findFeedByPostId(id) {
+            
+            PostService.findFeedByPostId(id).then(
+                function(response) {
+                    self.posts = {data: response.data};
+                }
+            );
+
+        }
+
         function hasExternalPosts() {
             return self.externalPosts !== undefined;
+        }
+
+        function hasViewUniquePost() {
+            return $stateParams.id !== undefined;
         }
 
         function like(event, positionPost) {

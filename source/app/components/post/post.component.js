@@ -8,9 +8,9 @@
                     templateUrl : 'app/components/post/post.html'
                 });
 
-    postController.$inject = ['PostService'];
+    postController.$inject = ['$location', 'PostService'];
 
-    function postController(PostService) {
+    function postController($location, PostService) {
 
         // vars
         const self = this;
@@ -29,10 +29,12 @@
 
             PostService.create(data).then(
                 function(response) {
-                    console.log(response);
+
                     if (response.status == 201) {
+                        $location.path('/home');
                         self.post = {};
                     }
+
                 }
             );
 

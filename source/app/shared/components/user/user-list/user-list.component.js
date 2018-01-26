@@ -6,6 +6,7 @@
             .component('userListComponent', {
                     bindings: {
                         externalData: '<',
+                        filter: '<'
                     },
                     controller  : userListController,
                     templateUrl : 'app/shared/components/user/user-list/user-list.html'
@@ -28,7 +29,7 @@
 
             if (hasExternalData()) {
                 self.users = self.externalData;
-            }else {
+            } else {
                 const userId = $stateParams.id;
                 const userStatus = $stateParams.status;
                 findUsersByStatusAndId(userStatus, userId);

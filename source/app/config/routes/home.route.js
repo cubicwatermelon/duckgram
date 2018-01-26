@@ -59,6 +59,15 @@
 		            }
 		        }
 	        })
+	        .state('home.postview', {
+	            url: '/postview/:id',
+		        views: {
+		            'homeView': { 
+			            url: '/',
+			        	component: 'feedComponent'
+		            }
+		        },
+	        })
 	        .state('home.notification', {
 	            url: '/notification',
 		        views: {
@@ -77,6 +86,18 @@
 		            'homeView': { 
 			            url: '/',
 			        	component: 'userListComponent'
+		            }
+		        }
+	        })
+	        .state('home.usersearch', {
+	            url: '/users/search/{search}',
+				params: {
+					search: { value: null }
+				},
+		        views: {
+		            'homeView': { 
+			            url: '/',
+			        	component: 'userSearchComponent'
 		            }
 		        }
 	        });
