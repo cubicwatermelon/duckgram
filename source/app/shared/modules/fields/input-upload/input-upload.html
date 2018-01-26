@@ -2,7 +2,8 @@
 	
     <label>{{$ctrl.label}}</label>
 
-    <div class="custom-file">
+    <div class="custom-file"
+        ng-hide="$ctrl.progress != 0">
         <input
             class="custom-file-input"
             id="customFile"
@@ -18,7 +19,7 @@
 
     <div class="progress mt-3" ng-show="$ctrl.progress != 0">
         <div 
-            class="progress-bar" 
+            class="progress-bar bg-success" 
             role="progressbar" 
             style="width: {{$ctrl.progress}}%;" 
             aria-valuenow="{{$ctrl.progress}}" 

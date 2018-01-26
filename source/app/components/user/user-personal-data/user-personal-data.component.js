@@ -8,9 +8,9 @@
                     templateUrl : 'app/components/user/user-personal-data/user-personal-data.html'
                 });
 
-    userPersonalDataController.$inject = ['UserPersonalDataService', 'UserLoggedServiceGeneric', 'ObjectGenericService'];
+    userPersonalDataController.$inject = ['UserPersonalDataService', 'UserLoggedServiceGeneric'];
 
-    function userPersonalDataController(UserPersonalDataService, UserLoggedServiceGeneric, ObjectGenericService) {
+    function userPersonalDataController(UserPersonalDataService, UserLoggedServiceGeneric) {
 
         // vars
         const self = this;
@@ -18,7 +18,7 @@
 
         // functions
         self.$onInit = onInit;
-        self.lengthObject = lengthObject;
+        self.removeImage = removeImage;
         self.updateUserData = updateUserData;
 
         /////////////////////////////////
@@ -39,13 +39,13 @@
 
         }
 
-        function lengthObject(data) {
-            return ObjectGenericService.lengthObject(data);
+        function removeImage() {
+            self.user.avatar = null;
         }
 
-        function updateUserData(event) {
+        function updateUserData(userData) {
 
-            const data = {user: event.data};
+            const data = {user: userData};
 
             UserPersonalDataService.updateUserData(data).then(
                 function(response){

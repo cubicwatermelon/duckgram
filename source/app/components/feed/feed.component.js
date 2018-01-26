@@ -17,7 +17,7 @@
 
         // vars
         const self = this;
-        self.posts = [];
+        self.posts = {};
 
         // functions
         self.$onInit = onInit;

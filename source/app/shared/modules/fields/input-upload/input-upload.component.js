@@ -5,11 +5,11 @@
         .module('DuckgramApp.fields')
         .component('inputUpload', {
 			bindings: {
-                label: '@',
-				inputText: '@',
+                inputText: '@',
+                requiredWarning: '@',
+                executeFunction: '&',
                 isRequired: '@',
-				requiredWarning: '@',
-                isDropActive: '@'
+                label: '@'
 			},
 			require: {
 				model: 'ngModel'
@@ -51,9 +51,13 @@
             } else {
                 self.hasError = false;
                 self.model.$setValidity('required', true);
+                uploadImage();
             }
 
-            console.log(self.value);
+
+		}
+
+        function uploadImage() {
 
             //envia imagem
             Upload.upload({
@@ -63,12 +67,12 @@
             }).progress(function (evt) {
                 self.progress = parseInt(100.0 * evt.loaded / evt.total);
             }).success(function (data, status, headers, config) {
+                self.executeFunction();
                 self.model.$setViewValue(data);
             }).error(function (data, status, headers, config) {
             });
 
-            // self.model.$setViewValue(self.value);
-		}
+        }
 
         function isRequired(value) {
 

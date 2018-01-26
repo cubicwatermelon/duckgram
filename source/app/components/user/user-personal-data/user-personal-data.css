@@ -1,0 +1,13 @@
+.c-user-personal-image {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px 0;
+	width: 100%;
+}
+
+.c-user-personal-image-item {
+	width: 150px;
+	height: 150px;
+}

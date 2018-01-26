@@ -14,7 +14,7 @@
 @media (min-width: 768px) {
 
 	.c-notification {
-		height: 300px;
+		max-height: 300px;
 		overflow-y: auto;
 	}
 
