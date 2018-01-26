@@ -1,8 +1,10 @@
 <div class="c-feed card bg-light mb-3" ng-repeat="post in $ctrl.posts track by $index">
 
 	<div class="card-header d-flex align-items-center p-2">
-		<img class="c-feed-img-profile card-img rounded-circle mr-3" ng-src="{{post.user.avatar}}">
-		{{post.user.name}}
+		<a ui-sref="home.profile({id: post.user.id})">
+			<img class="c-feed-img-profile card-img rounded-circle mr-3" ng-src="{{post.user.avatar}}">
+			{{post.user.name}}
+		</a>
 	</div> <!--  .card-header -->
 	
 	<img class="card-img rounded-0" ng-src="{{post.picture}}">
@@ -14,7 +16,11 @@
 	<div class="card-footer d-flex justify-content-between">
 
 		<div class="card-buttons">
-			<i class="fa fa-heart-o mr-2" aria-hidden="true"></i>
+			<button-like-component
+				auto-liked="post.liked"
+				post-id="{{post.id}}" 
+				execute-function="$ctrl.like($event, $index);">
+			</button-like-component>
 			{{post.likes}}
 		</div> <!-- .card-button -->
 

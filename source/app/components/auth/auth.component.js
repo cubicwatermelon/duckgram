@@ -34,10 +34,10 @@
         function login(data) {
 
             AuthService.login(data).then(
-                function(response){
+                function(response) {
                     
                     const accessToken = response.data.access_token;
-                    const userId = response.data.id;
+                    const userId = response.data.user_id;
                     if (response.status == 200 && accessToken) {
                         AuthService.setToken(accessToken);
                         UserLoggedServiceGeneric.setId(userId);

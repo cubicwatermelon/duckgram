@@ -21,6 +21,7 @@
 
         // functions
         self.$onInit = onInit;
+        self.like = like;
 
         /////////////////////////////////
 
@@ -48,6 +49,14 @@
 
         function hasExternalPosts() {
             return self.externalPosts !== undefined;
+        }
+
+        function like(event, positionPost) {
+
+            if (event.data.liked) {
+                self.posts[positionPost].likes++;
+            }
+
         }
 
     }

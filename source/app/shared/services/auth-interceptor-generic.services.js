@@ -37,10 +37,10 @@
 
 			// se erro retornado for um desses
 			// manda para rota de login padrao
-			if (response.status === 401 || response.status === 403) {
+			if (response.status === 500) {
 
 				$injector.get('AuthService').logout();
-				// $location.path('/login');
+				$location.path('/login');
 
 			}
 

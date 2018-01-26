@@ -1,11 +1,17 @@
-<ul class="c-notification list-group">
+<ul class="c-notification list-group list-group-flush">
 
-  <li class="list-group-item d-flex flex-column">
+  <li class="list-group-item d-flex flex-column" ng-repeat="item in $ctrl.notifications">
 		<small class="font-weight-bold d-flex">
-			<img class="c-notification-profile-img rounded-circle mr-2" src="https://goo.gl/iZGTUD">
-			Felipe mengatto
+			<a ui-sref="home.profile({id: item.user_id})">
+				{{item.user.name}}
+			</a>
 		</small>
-		<small class="text-muted text-center">Amou sua Foto!</small>
+		<small class="text-muted text-center">
+			<a ui-sref="home.postview({id: item.post_id})">
+				<i class="fa fa-heart ml-2 color-heart" aria-hidden="true"></i>
+				Curtiu - {{item.post.description}}
+			</a>
+		</small>
   </li>
 
 </ul>

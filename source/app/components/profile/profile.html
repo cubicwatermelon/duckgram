@@ -1,26 +1,30 @@
 <div class="c-profile-header mt-3 mb-3 border-bottom pb-4">
 		
-	<img class="c-profile-header-image rounded-circle" src="https://avatars0.githubusercontent.com/u/2951464?s=460&v=4" />
+	<img class="c-profile-header-image rounded-circle" ng-src="{{$ctrl.profile.avatar}}" />
 
 	<div class="c-profile-header-content">
 
 		<div class="c-profile-header-content-item">
-			<h4 ng-bind="$ctrl.profile.name"></h4>
+			<h4 class="m-2" ng-bind="$ctrl.profile.name"></h4>
+			<button-follow-component 
+				ng-if="$ctrl.profile.id" 
+				user-id="{{$ctrl.profile.id}}">	
+			</button-follow-component>
 		</div> <!-- .c-profile-header-content-item -->
 
 		<div class="c-profile-header-content-item">
 
 			<ul class="c-profile-header-content-list list-unstyled p-0 m-0">
 				<li class="c-profile-header-content-list-item">
-					<strong>73</strong> publicações
+					<strong ng-bind="$ctrl.profile.posts"></strong> publicações
 				</li>
 				<li class="c-profile-header-content-list-item">
-					<a ui-sref="home.users({status: 'followers'})">
+					<a ui-sref="home.users({status: 'followers', id: $ctrl.profile.id})">
 						<strong ng-bind="$ctrl.profile.followers"></strong> seguidores
 					</a>
 				</li>
 				<li class="c-profile-header-content-list-item">
-					<a ui-sref="home.users({status: 'following'})">
+					<a ui-sref="home.users({status: 'following', id: $ctrl.profile.id})">
 						<strong ng-bind="$ctrl.profile.following"></strong> seguindo
 					</a>
 				</li>

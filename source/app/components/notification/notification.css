@@ -7,6 +7,15 @@
     height: 20px;
 }
 
+.color-heart {
+	color: #ED4956;
+}
+
 @media (min-width: 768px) {
+
+	.c-notification {
+		height: 300px;
+		overflow-y: auto;
+	}
 
 }

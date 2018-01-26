@@ -1,0 +1,19 @@
+<div ng-hide="$ctrl.isHidden" ng-switch="$ctrl.state">
+
+	<button 
+		ng-switch-when="follow"
+		ng-click="$ctrl.follow($ctrl.userId);"
+		type="button" 
+		class="btn btn-dark btn-sm">
+		Seguir
+	</button>
+
+	<button
+		ng-switch-when="unfollow"
+		ng-click="$ctrl.unfollow($ctrl.userId);"
+		type="button" 
+		class="btn btn-outline-dark btn-sm">
+		Deixar de Seguir
+	</button>
+
+</div>

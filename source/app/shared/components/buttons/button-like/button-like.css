@@ -1,0 +1,7 @@
+.is-liked {
+	color: #ED4956;
+}
+
+.is-liked::before {
+    content: "\f004";
+}

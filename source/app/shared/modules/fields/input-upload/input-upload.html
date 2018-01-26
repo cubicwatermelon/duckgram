@@ -2,12 +2,31 @@
 	
     <label>{{$ctrl.label}}</label>
 
-    <input 
-    	type="text" 
-    	name="inputcomponent" 
-    	class="form-control" 
-    	ng-model="$ctrl.value" 
-    	ng-change="$ctrl.onChange()">
+    <div class="custom-file">
+        <input
+            class="custom-file-input"
+            id="customFile"
+            ngf-select 
+            ngf-clear-arq 
+            name="file" 
+            accept="image/*" 
+            ng-model="$ctrl.value" 
+            ng-change="$ctrl.onChange()"
+            type="file">
+        <label class="custom-file-label" for="customFile">Enviar Imagem</label>
+    </div> <!-- .custom-file -->
+
+    <div class="progress mt-3" ng-show="$ctrl.progress != 0">
+        <div 
+            class="progress-bar" 
+            role="progressbar" 
+            style="width: {{$ctrl.progress}}%;" 
+            aria-valuenow="{{$ctrl.progress}}" 
+            aria-valuemin="0" 
+            aria-valuemax="100">
+                {{$ctrl.progress}}%
+        </div>
+    </div>
 
     <div ng-show="$ctrl.hasError" class="alert alert-danger mt-2 p-2" role="alert">
     	{{$ctrl.requiredWarning}}

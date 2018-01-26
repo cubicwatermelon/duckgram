@@ -24,11 +24,11 @@
 
         // vars
         const self = this;
-        self.isDropActive = true;
         self.label = '';
         self.requiredWarning = '';
         self.hasError = false;
         self.value = '';
+        self.progress = 0;
 
         // functions
         self.$onInit = onInit;
@@ -53,7 +53,21 @@
                 self.model.$setValidity('required', true);
             }
 
-            self.model.$setViewValue(self.value);
+            console.log(self.value);
+
+            //envia imagem
+            Upload.upload({
+                method: 'POST',
+                url: 'http://duckgram.cubicwatermelon.com/service/duckgram/uploadfoto',
+                data: {file: self.value }
+            }).progress(function (evt) {
+                self.progress = parseInt(100.0 * evt.loaded / evt.total);
+            }).success(function (data, status, headers, config) {
+                self.model.$setViewValue(data);
+            }).error(function (data, status, headers, config) {
+            });
+
+            // self.model.$setViewValue(self.value);
 		}
 
         function isRequired(value) {

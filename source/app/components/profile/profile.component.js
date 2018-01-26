@@ -25,7 +25,7 @@
 
         function onInit() {
             findUserById($stateParams.id);
-            findPostsByUserId();
+            findPostsByUserId($stateParams.id);
         }
 
         function findUserById(id = null) {

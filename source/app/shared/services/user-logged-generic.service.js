@@ -23,7 +23,7 @@
         }
 
         function setId(id) {
-            LocalStorageGenericService.insert('userLoggedId');
+            LocalStorageGenericService.insert('userLoggedId', id);
         }
     }
 })();
