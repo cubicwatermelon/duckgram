@@ -11,9 +11,11 @@
                     templateUrl : 'app/components/feed/feed.html'
                 });
 
-    FeedController.$inject = ['$stateParams', '$scope','FeedService', 'PostService', 'UserLoggedServiceGeneric'];
+    FeedController.$inject = ['$stateParams', '$scope','FeedService', 
+                                    'PostService', 'UserLoggedServiceGeneric'];
 
-    function FeedController($stateParams, $scope, FeedService, PostService, UserLoggedServiceGeneric) {
+    function FeedController($stateParams, $scope, FeedService, 
+                                    PostService, UserLoggedServiceGeneric) {
 
         // vars
         const self = this;

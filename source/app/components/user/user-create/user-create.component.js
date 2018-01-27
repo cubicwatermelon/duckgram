@@ -8,9 +8,11 @@
                     templateUrl : 'app/components/user/user-create/user-create.html'
                 });
 
-    userCreateController.$inject = ['$location', 'UserCreateService', 'AuthService', 'UserLoggedServiceGeneric', 'LocalStorageGenericService'];
+    userCreateController.$inject = ['$location', 'UserCreateService', 
+                                        'AuthService', 'UserLoggedServiceGeneric', 'LocalStorageGenericService'];
 
-    function userCreateController($location, UserCreateService, AuthService, UserLoggedServiceGeneric, LocalStorageGenericService) {
+    function userCreateController($location, UserCreateService, 
+                                        AuthService, UserLoggedServiceGeneric, LocalStorageGenericService) {
 
         // vars
         const self = this;
