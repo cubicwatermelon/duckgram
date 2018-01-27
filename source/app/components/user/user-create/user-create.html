@@ -10,45 +10,8 @@
 			</div> <!-- .card-header -->
 			
 			<div class="card-body">
-				<form name="userForm" ng-submit="$ctrl.addNewUser($ctrl.data);" novalidate>
 
-				    <input-text 
-				    	label="Nome Completo" 
-				    	required-warning="Digite seu Nome Completo!" 
-				    	ng-model="$ctrl.data.name"
-				    	is-required="true">
-				    </input-text>
 
-				    <input-text 
-				    	label="Email" 
-				    	required-warning="Digite seu email!" 
-				    	ng-model="$ctrl.data.email"
-				    	is-required="true">
-				    </input-text>
-
-				    <input-password 
-				    	label="Sua Senha" 
-				    	required-warning="Ops, cadê sua senha!?" 
-				    	ng-model="$ctrl.data.password"
-				    	is-required="true">
-				    </input-password>
-
-					<input-upload
-						label="Foto de Perfil"
-						input-text="Clique"
-						required-warning="Você precisa de uma Imagem :)" 
-						ng-model="$ctrl.data.avatar"
-						is-required="true">
-					</input-upload>
-
-				    <button 
-				    	type="submit" 
-				    	class="btn btn-block btn-primary" 
-				    	ng-disabled="userForm.$invalid">
-				    	Cadastrar
-				    </button>
-
-				</form>
 			</div> <!-- .card-body -->
 
 		</div> <!-- .c-user-form-box -->

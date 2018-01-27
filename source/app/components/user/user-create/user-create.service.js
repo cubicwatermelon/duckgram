@@ -2,24 +2,20 @@
     'use strict';
 
     angular
-        .module('DuckgramApp')
-        .factory('UserCreateService', UserCreateService);
+        .module('module')
+        .factory('factory', factory);
 
-    UserCreateService.$inject = ['HttpGenericService'];
+    factory.$inject = ['dependencies'];
 
-    function UserCreateService(HttpGenericService) {
+    function factory(dependencies) {
         var service = {
-            addNewUser: addNewUser
+            func: func
         };
         return service;
 
         ////////////////
 
-        function addNewUser(data) {
-
-            return HttpGenericService.post('users', data);
-
+        function func() {
         }
-
     }
 })();
