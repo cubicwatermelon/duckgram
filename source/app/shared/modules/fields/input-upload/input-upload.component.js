@@ -24,10 +24,7 @@
 
         // vars
         const self = this;
-        self.label = '';
-        self.requiredWarning = '';
         self.hasError = false;
-        self.value = '';
         self.progress = 0;
 
         // functions

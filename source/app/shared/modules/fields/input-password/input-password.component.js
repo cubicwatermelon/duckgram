@@ -6,7 +6,7 @@
         .component('inputPassword', {
 			bindings: {
 				label: '@',
-                isRequired: '@',
+                isRequired: '<',
 				requiredWarning: '@'
 			},
 			require: {
@@ -22,10 +22,8 @@
 
         // vars
         const self = this;
-        self.label = '';
-        self.requiredWarning = '';
         self.hasError = false;
-        self.value = '';
+        let isRequired = isInputRequired(self.isRequired);
 
         // functions
         self.$onInit = onInit;
@@ -34,28 +32,34 @@
         /////////////////////////////////
 
         function onInit() {
-			this.model.$render = () => {
-			    self.value = self.model.$viewValue;
-                self.model.$setValidity('required', isRequired(self.isRequired));
-			}
+            this.model.$render = () => {
+
+                if (self.model.$viewValue) {
+                    self.value = self.model.$viewValue;
+                    return;
+                }
+
+                onChange();
+                
+            }
         }
 
-		function onChange() {
+        function onChange() {
 
-            if (self.value == '') {
+            if (isRequired || self.value == '') {
                 self.hasError = true;
-                self.model.$setValidity('required',false);
+                self.model.$setValidity('required', false);
             } else {
                 self.hasError = false;
-                self.model.$setValidity('required',true);
+                self.model.$setValidity('required', true);
             }
 
             self.model.$setViewValue(self.value);
-		}
+        }
 
-        function isRequired(value) {
+        function isInputRequired(required) {
 
-            if (value !== undefined && value == true) {
+            if (required !== undefined || required) {
                 return true;
             }
 
