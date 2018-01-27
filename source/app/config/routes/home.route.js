@@ -41,15 +41,6 @@
 		            }
 		        }
 	        })
-	        .state('home.config', {
-	            url: '/config',
-		        views: {
-		            'homeView': { 
-			            url: '/',
-			        	component: 'userPersonalDataComponent'
-		            }
-		        }
-	        })
 	        .state('home.post', {
 	            url: '/post',
 		        views: {

@@ -16,12 +16,7 @@
 	            url: '/login',
 	        	component: 'authComponent'
 	        });
-
-	    $stateProvider
-	        .state('join', {
-	            url: '/join',
-	        	component: 'userCreateComponent'
-	        });
+	        
     }
 
 })();
