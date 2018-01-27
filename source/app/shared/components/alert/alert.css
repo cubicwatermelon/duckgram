@@ -1,0 +1,89 @@
+.c-alert {
+    align-items: center;
+    top: 30px;
+    right: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    position: fixed;
+    width: 300px;
+    z-index: 1051;
+}
+
+.c-alert-fadein {
+    -webkit-animation: fadein 1s both;
+    -o-animation: fadein 1s both;
+    -moz-animation: fadein 1s both;
+    animation: fadein 1s both;
+    visibility: visible;
+}
+
+.c-alert-fadeout {
+    -webkit-animation: fadeout 1s both;
+    -o-animation: fadeout 1s both;
+    -moz-animation: fadeout 1s both;
+    animation: fadeout 1s both;
+}
+
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.1;
+    }
+    to{
+        opacity: 0.2;
+    }
+    to{
+        opacity: 0.4;
+    }
+    to{
+        opacity: 0.6;
+    }
+    to{
+        opacity: 0.8;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    to{
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.1;
+    }
+    to{
+        opacity: 0.2;
+    }
+    to{
+        opacity: 0.4;
+    }
+    to{
+        opacity: 0.6;
+    }
+    to{
+        opacity: 0.8;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    to{
+        opacity: 0;
+    }
+}

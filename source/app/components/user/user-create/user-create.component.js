@@ -35,10 +35,6 @@
                         redirectToLogin(userData);
                     }
 
-                    if (response.status == 500) {
-                        console.log('Usuário ja cadastrado');
-                    }
-
                 }
             );
         }

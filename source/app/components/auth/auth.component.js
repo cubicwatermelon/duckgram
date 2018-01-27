@@ -8,9 +8,9 @@
             templateUrl : 'app/components/auth/auth.html'
         });
 
-    AuthController.$inject = ['$location', 'AuthService', 'UserLoggedServiceGeneric'];
+    AuthController.$inject = ['$location', 'AlertService', 'AuthService', 'UserLoggedServiceGeneric'];
 
-    function AuthController($location, AuthService, UserLoggedServiceGeneric) {
+    function AuthController($location, AlertService, AuthService, UserLoggedServiceGeneric) {
 
         // vars
         const self = this;

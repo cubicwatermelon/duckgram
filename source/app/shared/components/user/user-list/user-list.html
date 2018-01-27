@@ -3,6 +3,7 @@
 	<ul class="list-group w-100">
 		<li class="list-group-item" 
 			ng-repeat="user in $ctrl.users | filter: $ctrl.filter">
+			<img class="c-user-list-image rounded-circle" ng-src="{{user.avatar}}">
 			<a ui-sref="home.profile({id: user.id})" ng-bind="user.name"></a>
 		</li>
 	</ul>

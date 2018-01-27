@@ -1,15 +1,18 @@
 <ul class="c-notification list-group list-group-flush">
 
-	<li class="list-group-item d-flex flex-column" ng-repeat="item in $ctrl.notifications">
+	<li class="list-group-item" ng-repeat="item in $ctrl.notifications">
 		<small class="font-weight-bold d-flex">
-			<a ui-sref="home.profile({id: item.user_id})">
+			<a ui-sref="home.profile({id: item.user.id})">
 				{{item.user.name}}
+				<small class="text-muted" >
+					<i class="fa fa-heart ml-2 color-heart" aria-hidden="true"></i>
+					Curtiu
+				</small>
 			</a>
 		</small>
 		<small class="text-muted text-center">
-			<a ui-sref="home.postview({id: item.post_id})">
-				<i class="fa fa-heart ml-2 color-heart" aria-hidden="true"></i>
-				Curtiu - {{item.post.description}}
+			<a ui-sref="home.postview({id: item.post.id})">
+				{{item.post.description}}
 			</a>
 		</small>
 	</li>

@@ -5,7 +5,10 @@
 	<div class="c-user-search-item">
 		<form name="searchForm" ng-submit="$ctrl.findUserByValue($ctrl.searchInput);">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Buscar Usuário" ng-model="$ctrl.searchInput">
+				<input type="text" 
+					class="form-control c-user-search-input" 
+					placeholder="Buscar Usuário" 
+					ng-model="$ctrl.searchInput">
 				<span class="input-group-append" ng-if="$ctrl.onlySearch">
 					<button 
 						class="btn btn-secondary" 

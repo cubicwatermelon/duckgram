@@ -1,3 +1,15 @@
+.c-user-search-input {
+	max-width: 165px;
+}
+
 .c-user-search-item {
 	width: 100%;
+}
+
+@media (min-width: 768px) {
+
+	.c-user-search-input {
+		max-width: initial;
+	}
+
 }

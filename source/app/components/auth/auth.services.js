@@ -5,13 +5,12 @@
         .module('DuckgramApp')
         .factory('AuthService', AuthService);
 
-    AuthService.$inject = ['HttpGenericService', '$q', 'LocalStorageGenericService'];
+    AuthService.$inject = ['$location', 'HttpGenericService', 'LocalStorageGenericService', 'UserLoggedServiceGeneric'];
 
-    function AuthService (HttpGenericService, $q, LocalStorageGenericService) {
+    function AuthService($location, HttpGenericService, LocalStorageGenericService, UserLoggedServiceGeneric) {
 
         //vars
         var localStorageName = '_duck_logged_token';
-        var loginProvider = '_login_provider';
 
         var service = {
             getToken: getToken,
@@ -48,10 +47,8 @@
         function logout() {
 
             LocalStorageGenericService.remove(localStorageName);
-            LocalStorageGenericService.remove(loginProvider);
-
-            // resolve promise
-            $q.when();
+            UserLoggedServiceGeneric.removeUserLogged();
+            $location.path('/login');
 
         }
 

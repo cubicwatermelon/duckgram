@@ -11,7 +11,8 @@
 
         var service = {
             getId: getId,
-            setId: setId
+            setId: setId,
+            removeUserLogged: removeUserLogged
         };
         
         return service;
@@ -25,5 +26,10 @@
         function setId(id) {
             LocalStorageGenericService.insert('userLoggedId', id);
         }
+
+        function removeUserLogged() {
+            LocalStorageGenericService.remove('userLoggedId');
+        }
     }
+
 })();

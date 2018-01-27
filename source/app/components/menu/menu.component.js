@@ -8,19 +8,24 @@
                     templateUrl : 'app/components/menu/menu.html'
                 });
 
-    menuController.$inject = [];
+    menuController.$inject = ['AuthService'];
 
-    function menuController() {
+    function menuController(AuthService) {
 
         // vars
         const self = this;
 
         // functions
         self.$onInit = onInit;
+        self.logout = logout;
 
         /////////////////////////////////
 
         function onInit() {
+        }
+
+        function logout() {
+            AuthService.logout();
         }
 
     }

@@ -8,9 +8,9 @@
                     templateUrl : 'app/components/post/post.html'
                 });
 
-    postController.$inject = ['$location', 'PostService'];
+    postController.$inject = ['$location', 'PostService', 'AlertService'];
 
-    function postController($location, PostService) {
+    function postController($location, PostService, AlertService) {
 
         // vars
         const self = this;
@@ -31,6 +31,7 @@
                 function(response) {
 
                     if (response.status == 201) {
+                        AlertService.show('uhull! post enviado!', 'alert-success');
                         $location.path('/home');
                         self.post = {};
                     }

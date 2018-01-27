@@ -5,9 +5,9 @@
         .module('DuckgramApp')
         .factory('HttpGenericService', HttpGenericService)
 
-    HttpGenericService.$inject = ['$http'];
+    HttpGenericService.$inject = ['$http', 'AlertService'];
 
-    function HttpGenericService($http) {
+    function HttpGenericService($http, AlertService) {
 
         // vars local
         const baseUrl = 'https://duckgram-api.herokuapp.com/api/v1';
@@ -34,6 +34,7 @@
                         }
 
                         function error(error) {
+                            AlertService.show('Ops, algo deu errado!', 'alert-danger');
                             console.error(`XHR Failed GET ${url}`, error.data);
                         }
 
@@ -50,6 +51,7 @@
                         }
 
                         function error(error) {
+                            AlertService.show('Ops, algo deu errado!', 'alert-danger');
                             console.error(`XHR Failed POST ${url}`, error.data);
                         }
 
@@ -66,6 +68,7 @@
                         }
 
                         function error(error) {
+                            AlertService.show('Ops, algo deu errado!', 'alert-danger');
                             console.error(`XHR Failed PUT ${url}`, error.data);
                         }
         }
@@ -81,6 +84,7 @@
                         }
 
                         function error(error) {
+                            AlertService.show('Ops, algo deu errado!', 'alert-danger');
                             console.error(`XHR Failed DELETE ${url}`, error.data);
                         }
         }

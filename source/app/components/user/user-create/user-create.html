@@ -1,4 +1,4 @@
-<div class="c-user-create d-flex justify-content-center align-items-center">
+<div class="c-user-create d-flex justify-content-center align-items-start">
 	
 	<div class="c-user-create-box">
 
@@ -15,13 +15,15 @@
 				    <input-text 
 				    	label="Nome Completo" 
 				    	required-warning="Digite seu Nome Completo!" 
-				    	ng-model="$ctrl.data.name">
+				    	ng-model="$ctrl.data.name"
+				    	is-required="true">
 				    </input-text>
 
 				    <input-text 
 				    	label="Email" 
 				    	required-warning="Digite seu email!" 
-				    	ng-model="$ctrl.data.email">
+				    	ng-model="$ctrl.data.email"
+				    	is-required="true">
 				    </input-text>
 
 				    <input-password 

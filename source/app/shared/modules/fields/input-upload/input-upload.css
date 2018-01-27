@@ -1,0 +1,7 @@
+.custom-file-label::after {
+	content: 'Procurar';
+}
+
+.c-input-upload {
+	overflow: hidden;
+}

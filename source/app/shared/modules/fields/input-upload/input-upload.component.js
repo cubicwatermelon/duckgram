@@ -65,9 +65,11 @@
                 url: 'http://duckgram.cubicwatermelon.com/service/duckgram/uploadfoto',
                 data: {file: self.value }
             }).progress(function (evt) {
+                self.model.$setValidity('required', false);
                 self.progress = parseInt(100.0 * evt.loaded / evt.total);
             }).success(function (data, status, headers, config) {
                 self.executeFunction();
+                self.model.$setValidity('required', true);
                 self.model.$setViewValue(data);
             }).error(function (data, status, headers, config) {
             });

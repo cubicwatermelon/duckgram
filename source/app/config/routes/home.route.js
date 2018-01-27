@@ -60,7 +60,10 @@
 		        }
 	        })
 	        .state('home.postview', {
-	            url: '/postview/:id',
+	            url: '/postview/{id}',
+				params: {
+					id: { value: null }
+				},
 		        views: {
 		            'homeView': { 
 			            url: '/',
