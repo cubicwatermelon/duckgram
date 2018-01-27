@@ -8,56 +8,7 @@
 		</div> <!-- .card-header -->
 		
 		<div class="card-body">
-			<form name="userForm" ng-submit="$ctrl.updateUserData($ctrl.user);" novalidate>
 
-			    <input-text 
-			    	label="Nome Completo" 
-			    	required-warning="Digite seu Nome Completo!" 
-			    	ng-model="$ctrl.user.name">
-			    </input-text>
-
-			    <input-text 
-			    	label="Email" 
-			    	required-warning="Digite seu email!" 
-			    	ng-model="$ctrl.user.email">
-			    </input-text>
-
-			    <input-password 
-			    	label="Sua Senha" 
-			    	required-warning="Ops, cadê sua senha!?" 
-			    	ng-model="$ctrl.user.password"
-			    	is-required="false">
-			    </input-password>
-
-			    <div ng-switch="$ctrl.user.avatar">
-
-				    <input-upload
-				    	ng-switch-when="null"
-				    	label="Foto de Perfil"
-				    	input-text="Clique"
-				    	required-warning="Você precisa de uma Imagem :)" 
-				    	ng-model="$ctrl.user.avatar"
-				    	execute-function="$ctrl.updateUserData($ctrl.user);"
-				    	is-required="true">
-				    </input-upload>
-
-				    <div class="c-user-personal-image" 
-				    	ng-switch-default>
-				    	<img class="c-user-personal-image-item rounded-circle" 
-				    		ng-src="{{$ctrl.user.avatar}}" />
-				    	<button type="button" ng-click="$ctrl.removeImage()" class="btn btn-outline-danger btn-sm mt-2">Deletar Imagem</button>
-				    </div> <!--  .c-user-personal-image -->
-
-			    </div>
-
-			    <button 
-			    	type="submit" 
-			    	class="btn btn-block btn-primary" 
-			    	ng-disabled="userForm.$invalid">
-			    	Alterar
-			    </button>
-
-			</form>
 		</div> <!-- .card-body -->
 
 	</div> <!-- .c-user-personal-box -->

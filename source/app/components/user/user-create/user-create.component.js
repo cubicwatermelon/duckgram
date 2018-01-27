@@ -13,7 +13,6 @@
 
     Controller.$inject = ['dependencies'];
 
-    /* @ngInject */
     function Controller(dependencies) {
 
     }
