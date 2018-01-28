@@ -1,6 +1,6 @@
 <div class="c-user-list d-flex justify-content-center align-items-center">
 	
-	<ul class="list-group w-100">
+	<ul class="list-group w-100" ng-if="$ctrl.users.length > 0">
 		<li class="list-group-item" 
 			ng-repeat="user in $ctrl.users | filter: $ctrl.filter">
 			<img class="c-user-list-image rounded-circle" ng-src="{{user.avatar}}">

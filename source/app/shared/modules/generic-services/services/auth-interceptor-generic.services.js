@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('DuckgramApp')
+        .module('DuckgramApp.genericServices')
         .factory('AuthInterceptorGeneric', AuthInterceptorGeneric);
 
     AuthInterceptorGeneric.$inject = ['$location', '$injector', '$q'];

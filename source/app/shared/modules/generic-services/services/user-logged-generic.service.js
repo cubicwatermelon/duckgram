@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('DuckgramApp')
+        .module('DuckgramApp.genericServices')
         .factory('UserLoggedServiceGeneric', UserLoggedServiceGeneric);
 
     UserLoggedServiceGeneric.$inject = ['LocalStorageGenericService'];

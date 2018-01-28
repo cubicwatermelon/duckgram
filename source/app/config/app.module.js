@@ -8,7 +8,8 @@
 				'ui.router',
 				'ui.router.state.events',
 				'ngSanitize', 
-				'DuckgramApp.fields'
+				'DuckgramApp.fields',
+				'DuckgramApp.genericServices'
 			]
 		);
 

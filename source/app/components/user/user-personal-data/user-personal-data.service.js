@@ -2,21 +2,32 @@
     'use strict';
 
     angular
-        .module('module')
-        .factory('factory', factory);
+        .module('DuckgramApp')
+        .factory('UserPersonalDataService', UserPersonalDataService);
 
-    factory.$inject = ['dependencies'];
+    UserPersonalDataService.$inject = ['HttpGenericService'];
 
-    /* @ngInject */
-    function factory(dependencies) {
+    function UserPersonalDataService(HttpGenericService) {
+
         var service = {
-            func: func
+            findUserById: findUserById,
+            updateUserData: updateUserData
         };
         return service;
 
         ////////////////
 
-        function func() {
+        function findUserById(id) {
+
+            return HttpGenericService.get(`users/${id}`);
+            
         }
+
+        function updateUserData(data) {
+
+            return HttpGenericService.put(`users/${data.user.id}`, data);
+            
+        }
+
     }
 })();

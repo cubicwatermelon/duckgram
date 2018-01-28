@@ -1,6 +1,6 @@
 <ul class="c-notification list-group list-group-flush">
 
-	<li class="list-group-item" ng-repeat="item in $ctrl.notifications">
+	<li class="list-group-item" ng-repeat="item in $ctrl.notifications track by $index">
 		<small class="font-weight-bold d-flex">
 			<a ui-sref="home.profile({id: item.user.id})">
 				{{item.user.name}}

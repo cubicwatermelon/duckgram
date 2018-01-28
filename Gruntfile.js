@@ -89,7 +89,6 @@ module.exports = function(grunt) {
             options: {
               mangle: true
             },
-
             dist: {
               files: {
                 'www/web-files/js/app.min.js': ['temp/js/angular-concat-es6.js'],

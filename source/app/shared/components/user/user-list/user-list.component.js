@@ -5,8 +5,8 @@
         .module('DuckgramApp')
             .component('userListComponent', {
                     bindings: {
-                        externalData: '<',
-                        filter: '<'
+                        externalData: '<?',
+                        filter: '<?'
                     },
                     controller  : userListController,
                     templateUrl : 'app/shared/components/user/user-list/user-list.html'

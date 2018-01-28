@@ -37,8 +37,9 @@
 
         function like() {
 
-            if (isAutoLiked() === false) {
+            if (isAutoLiked() == false) {
                 sendLike();
+                self.autoLiked = true;
             }
 
         }
@@ -52,6 +53,8 @@
                     if (response.status == 204) {
                         self.classColorLiked = 'is-liked';
                         executeCallback();
+                    } else {
+                        self.autoLiked = false;
                     }
 
                 }
